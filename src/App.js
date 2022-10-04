@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {useContext, useEffect} from 'react';
+import {getWeatherdata} from './service';
+import {PlacesContext} from './Context/PlacesContext'
+import Place from './Components/Places/Place';
 
 function App() {
+
+  const {setPlaces} = useContext(PlacesContext)
+
+  const latitude = -24.193402158136706
+  const longitude = -65.3150226944321
+  useEffect(() =>{
+    getWeatherdata(latitude, longitude)
+    .then((data)=>{
+      setPlaces(data);
+    })
+    .catch((err) => console.log(err));
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
