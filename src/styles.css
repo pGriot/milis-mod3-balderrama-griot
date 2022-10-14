@@ -1,0 +1,93 @@
+/* Login */
+.sign-in-container, .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://es.wikiloc.com/rutas-senderismo/cascada-congelada-cusi-cusi-jujuy-78889129/photo-51283574');
+  }
+  
+  .input-form {
+    background: none;
+    background-color: white;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+    margin: 25px 0;
+  }
+  
+  .input-form:focus {
+    outline: none;
+  }
+  
+  .btn-form {
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .error {
+    color:red;
+  }
+/* Login */
+
+
+/* ClimaCard */
+.palette-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.del {
+  display: flex;
+  text-align: center;
+  height: 34px;
+  width: 34px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e9e9e9;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.del:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+.delete {
+  color: #fd5454;
+}
+.btn-see-more {
+  text-decoration: none;
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  color: #000;
+}
+
+.btn-see-more:hover {
+  cursor: pointer;
+  background-color: rgb(37, 37, 37);
+  color: #fff;
+}
+
+/* ClimaCard */
