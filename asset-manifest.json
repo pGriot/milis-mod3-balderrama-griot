@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/milis-mod3-balderrama-griot/static/css/main.d2bef4dd.css",
+    "main.js": "/milis-mod3-balderrama-griot/static/js/main.3195fc46.js",
+    "static/media/logo_grande500.png": "/milis-mod3-balderrama-griot/static/media/logo_grande500.a046d04041d411e2a04b.png",
+    "static/media/logo_grande.png": "/milis-mod3-balderrama-griot/static/media/logo_grande.a1c6e7c08e3d972e87c9.png",
+    "index.html": "/milis-mod3-balderrama-griot/index.html",
+    "main.d2bef4dd.css.map": "/milis-mod3-balderrama-griot/static/css/main.d2bef4dd.css.map",
+    "main.3195fc46.js.map": "/milis-mod3-balderrama-griot/static/js/main.3195fc46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2bef4dd.css",
+    "static/js/main.3195fc46.js"
+  ]
+}
