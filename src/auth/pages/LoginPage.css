@@ -1,0 +1,16 @@
+.logo{
+    display: flex;
+    float: left;
+}
+
+.sign-in-container{
+    font-size: xx-large;
+    padding-top: 5%;
+    
+}
+
+.sign-in-form{
+    padding-top: 15%;
+    display: flex;
+    float: right;
+}

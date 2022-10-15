@@ -6,25 +6,19 @@ import { BsShop } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { BsLock } from "react-icons/bs";
 import { BsBoxArrowInRight } from "react-icons/bs";
-
+import logoGrande from '../../Assets/logo_grande500.png'
+import './LoginPage.css'
 
 
 export const LoginPage = () => {
 
-
-  //const { setCurrentUser } = useContext(UserContext)
   const navigate = useNavigate();
-
   const { login } = useContext( AuthContext );
-
-  
-
   const { register, handleSubmit, formState:{ errors } } = useForm();
 
   const onSubmit = (data) => {
     console.log("data ",data);
     localStorage.setItem('currentUser', JSON.stringify(data))
-    //setCurrentUser(data)
     login(data.usuario);
     console.log("usuario ingresado ", data.usuario);
     navigate('/',{
@@ -35,9 +29,15 @@ export const LoginPage = () => {
  
    return (
     <>
+      
        <div className="sign-in-container">
+        
       <span>Bienvenido <BsShop></BsShop></span>
-      <form className="sign-in-form" onSubmit={ handleSubmit(onSubmit)}>
+      <div className='login-container'>
+      <div className='logo'><img src={logoGrande} alt="logo" /></div>
+      
+
+      <form className="sign-in-form" onSubmit={ handleSubmit(onSubmit)} >
         <input 
           className="input-form"
           type="text"
@@ -67,6 +67,8 @@ export const LoginPage = () => {
       </button>
 
       </form>
+      
+      </div>
      </div>
     </>
    )
