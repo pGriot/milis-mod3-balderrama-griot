@@ -1,52 +1,22 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 import { useForm } from 'react-hook-form';
-//import { useFectchClima } from '../../hooks/useFectchClima';
-
 import { useNavigate } from 'react-router-dom';
-import { getClima } from '../../helpers';
-import { useFectchClima } from '../../hooks/useFectchClima';
 import { ClimaContext } from '../context';
-
+import './ClimPage.css'
+import logoGrande from '../../Assets/logo_grande.png'
 
 
 
 export const ClimPage = () => {
 
-  const { register, handleSubmit, formState:{ errors }, getValues } = useForm();
-
+  const { register, handleSubmit, formState:{ errors } } = useForm();
   const { climaList, setClima } = useContext( ClimaContext );
-
   const navigate = useNavigate();
 
-  const [inf, setInf] = useState([]);
-
-  //const {info, isLoading} = useFectchClima(-24.24164961442272, -64.88511214788474);
-  const { info, isLoading } = useFectchClima(inf.lati, inf.longi);
-  //console.log("lati env ", inf.lati);
-  //const {time, temperature } = {{info.current_weather}};
-  console.log("service fetchClima en climpage ", {info, isLoading});
-  console.log("la temp es ", info.temperature );
-
-  //const { data } = useFectchClima(data.Latitud, data.Longitud);
-  console.log("mostrando array ",climaList);
-
-  //const handleInput = (event) => {
-  //  console.log("Lati ? ",event.target.latitud);
-  //}
-
-  console.log("mostrando getValue ", getValues("latitud"));
-
-  
+   
   
 
   const onSubmit = (data) => {
-
-    //const {info, isLoading} = useFectchClima(data.latitud, data.longitud);
-    //setInf([data.latitud, data.longitud]);
-    //console.log("data enviada ", {inf});
-    const pru = () => {
-      setInf(data);
-    }
 
     
     const climaNew = {
@@ -55,9 +25,8 @@ export const ClimPage = () => {
       latitud: data.latitud,
       longitud: data.longitud,
       activo: true,      
-      temperatura: info.temperature,
-      velViento: info.windspeed,
     }
+
     setClima([...climaList, climaNew]);
     console.log("data ",data);
     navigate('/');
@@ -65,12 +34,17 @@ export const ClimPage = () => {
 
   return (
     <>
+    <div className='container'>
        <h1>Agregar nueva ubicacion</h1>
        <hr />
+       
+       <div className='logo'>
+        <img src={logoGrande} />
+        </div>
 
        <div className="row">
-        <div className="col-5">
-          <form onSubmit={ handleSubmit( onSubmit ) }>
+        {/* <div className="col-5">    */}
+          <form className='formulario' onSubmit={ handleSubmit( onSubmit ) }>
             <input
               className="input-form"
               type="text"
@@ -79,7 +53,7 @@ export const ClimPage = () => {
                 ...register('nombre', { required: '* Nombre es requerido'})
               }
              />
-             <p className="error">{ errors.nombre?.message }</p>
+             <p>{ errors.nombre?.message }</p>
               
              
              <input
@@ -90,7 +64,7 @@ export const ClimPage = () => {
                 ...register('latitud', { required:'* Latitud es requerido'})
               }          
               />
-              <p className="error">{ errors.latitud?.message }</p>
+              <p>{ errors.latitud?.message }</p>
 
               <input
                className="input-form"
@@ -100,14 +74,15 @@ export const ClimPage = () => {
                 ...register('longitud', { required: '* Longitud es requerido'})
                }
                />
-               <p className="error">{ errors.longitud?.message }</p>
+               <p>{ errors.longitud?.message }</p>
 
              <button className="btn btn-outline-primary mt-1" type="submit">
                Crear
              </button>
 
           </form>
-        </div>
+        {/* </div> */}
+       </div>
        </div>
     </>
   )

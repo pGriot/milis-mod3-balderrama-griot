@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useContext } from 'react';
 import { ClimaContext } from '../context';
 import { useFectchClima } from '../../hooks/useFectchClima';
+import './ClimaCard.css';
 
 
-export const ClimaCard = ({ id, nombre, latitud, longitud, activo, temperatura, velViento }) => {
+
+
+export const ClimaCard = ({ id, nombre, latitud, longitud }) => {
 
   const { climaList, setClima } = useContext( ClimaContext );
-
   const { info } = useFectchClima(latitud, longitud);
+    
 
   const deleteClima = () => {
     console.log("eliminando tarj ",id);
@@ -24,6 +26,9 @@ export const ClimaCard = ({ id, nombre, latitud, longitud, activo, temperatura, 
      );
   }
   
+  
+  console.log(info.temperature)
+
   return (
     <div className="col animate__animated animate__fadeIn">
        <div className="card">
@@ -38,21 +43,19 @@ export const ClimaCard = ({ id, nombre, latitud, longitud, activo, temperatura, 
             </div>
                 
                 <div className="col-8">
+                
                     <h5 className="card-title">Ubicacion #{ id }</h5>
-                    <p className="card-text">nombre: { nombre }</p>
-                    <p className="card-text">latitud: { latitud }</p>
-                    <p className="card-text">longitud: { longitud }</p>
+                    <p className="card-text">Nombre: { nombre }</p>
+                    <p className="card-text">Latitud: { latitud }</p>
+                    <p className="card-text">Longitud: { longitud }</p>
                     
-                    <p className="card-text">temperatura: { info.temperature } °C</p>
-                    <p className="card-text">vel. viento: { info.windspeed } Km/h</p>
+                    <p className="card-text">Temperatura: { info.temperature } °C</p>
+                    <p className="card-text">Vel. viento: { info.windspeed } Km/h</p>
 
-                    <div className="palette-actions">
+                    <div className="clima-actions">
                       <div className="del" onClick={deleteClima}>
                         <FaRegTrashAlt className="delete"></FaRegTrashAlt>
                       </div>
-                      <Link className='btn-see-more' to={`/clima/${ id }`}>
-                      Mas...
-                    </Link>
                     </div>
 
                     

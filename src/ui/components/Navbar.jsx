@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth';
 import { BsBoxArrowInLeft } from "react-icons/bs";
+import logo from '../../Assets/logo.png'
 
 
 
@@ -20,6 +21,11 @@ export const Navbar = () => {
         });
     }
 
+    
+    const onNavigate = () => {
+        navigate('/clim');
+      }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             
@@ -27,7 +33,7 @@ export const Navbar = () => {
                 className="navbar-brand" 
                 to="/"
             >
-                Informacion
+                <img src={logo} alt='Logo' className='logo' />
             </Link>
 
             <div className="navbar-collapse">
@@ -40,21 +46,15 @@ export const Navbar = () => {
                         Clima
                     </NavLink>
 
-                    {/*<NavLink 
-                        className="nav-item nav-link" 
-                        to="/dc"
-                    >
-                        Search
-                    </NavLink> */} 
                 </div>
             </div>
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
-                    
-                    <span className="nav-item nav-link text-primary">
-                        {/* { user?.name } */} 
-                        {/* Cristian */} 
+                <button className="btn btn-outline-primary" onClick={ onNavigate }>
+                Nueva Ubicacion
+            </button>
+                    <span className="nav-link text-primary">
                         { user?.name }
                     </span>
 

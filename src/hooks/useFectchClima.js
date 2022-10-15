@@ -4,7 +4,7 @@ import { getClima } from "../helpers";
 
 
 
-export const useFectchClima = ( lat=-24.185930418908384, long=-65.29932514190581 ) => {
+export const useFectchClima = ( lat, long ) => {
 
     const [ info, setInfo ] = useState([]);
     const [ isLoading, setIsLoading ] = useState( true );
@@ -13,8 +13,6 @@ export const useFectchClima = ( lat=-24.185930418908384, long=-65.29932514190581
 
     const getInfo = async () => {
         const newInfo = await getClima( lat, long );
-        //setInfo( newInfo );
-        //setIsLoading( false );
     }
 
     useEffect( () => {

@@ -1,5 +1,4 @@
 import { createContext, useState } from "react"
-//import { ClimaContext } from "./ClimaContext";
 
 
 const cli01 = [
@@ -10,8 +9,6 @@ const cli01 = [
     latitud: -22.424135389768523,
     longitud: -65.58056287171037,
     activo: true,
-    temperatura:3,
-    velViento:3,
   },
   
   {
@@ -20,8 +17,6 @@ const cli01 = [
     latitud: -23.74651655590978,
     longitud: -65.50419873551118,
     activo: true,
-    temperatura:3,
-    velViento:3,
   },
 
   
@@ -31,8 +26,6 @@ const cli01 = [
     latitud: -23.586132932615712,
     longitud: -65.40262742430272,
     activo: true,
-    temperatura:3,
-    velViento:3,
   },
 
 ]

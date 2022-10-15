@@ -30,8 +30,6 @@ export const AppRouter = () => {
               </PrivateRoute>
             } />
 
-            {/* <Route path="login" element={<LoginPage />}/> */}
-            {/*<Route path="/*" element={<ClimaRoutes />}/>*/}
             
        </Routes>
     </>

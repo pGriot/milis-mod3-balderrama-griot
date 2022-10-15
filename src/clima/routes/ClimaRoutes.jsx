@@ -9,13 +9,6 @@ import { getClima } from "../../helpers";
 
 export const ClimaRoutes = () => {
 
-  //const { setClima } = useContext( ClimaContext );
-
- //const {info, isLoading} = useFectchClima();
-  //console.log("service fetchClima ", {info, isLoading});
-  //console.log("temp ", info.current_weather.temperature);
-  //console.log("probando help clima ", getClima());
-
 
   return (
     <>

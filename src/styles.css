@@ -48,7 +48,11 @@
 
 
 /* ClimaCard */
-.palette-actions {
+.card{
+  border-color: #000;
+  border-style: 5px;
+}
+.clima-actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
